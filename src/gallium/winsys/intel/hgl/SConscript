@@ -14,7 +14,7 @@ if env['platform'] in ('haiku'):
         '#/src/gallium/drivers',
     ])
 
-    ws_haiku = env.ConvenienceLibrary(
+    intelwinsys = env.ConvenienceLibrary(
         target = 'intelwinsys',
         source = [
            'intel_hgl_winsys.c',

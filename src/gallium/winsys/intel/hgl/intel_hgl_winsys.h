@@ -24,19 +24,17 @@
  * of the Software.
  *
  **************************************************************************/
-#ifndef _HGL_SOFTWAREWINSYS_H
-#define _HGL_SOFTWAREWINSYS_H
+#ifndef _HGL_INTELWINSYS_H
+#define _HGL_INTELWINSYS_H
 
 
 #include "pipe/p_defines.h"
 #include "state_tracker/st_api.h"
-#include "state_tracker/sw_winsys.h"
 
 
 struct haiku_displaytarget
 {
 	enum pipe_format format;
-	color_space colorSpace;
 
 	unsigned width;
 	unsigned height;
@@ -46,8 +44,6 @@ struct haiku_displaytarget
 
 	void* data;
 };
-
-
 
 
 #endif

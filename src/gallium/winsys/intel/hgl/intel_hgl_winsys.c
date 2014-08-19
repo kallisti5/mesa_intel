@@ -28,8 +28,6 @@
  **************************************************************************/
 
 
-#include <intel_bufmgr.h>
-
 #include "os/os_thread.h"
 #include "pipe/p_state.h"
 #include "util/u_inlines.h"
@@ -37,7 +35,7 @@
 #include "util/u_debug.h"
 #include "../intel_winsys.h"
 
-#include "hgl_intel_winsys.h"
+#include "intel_hgl_winsys.h"
 
 
 #define BATCH_SZ (8192 * sizeof(uint32_t))
@@ -57,7 +55,8 @@ probe_winsys(struct intel_winsys *winsys)
 {
 	struct intel_winsys_info *info = &winsys->info;
 
-	info->devid = drm_intel_bufmgr_gem_get_devid(winsys->bufmgr);
+	//info->devid = drm_intel_bufmgr_gem_get_devid(winsys->bufmgr);
+	info->devid = 0;
 
 	info->max_batch_size = BATCH_SZ;
 
