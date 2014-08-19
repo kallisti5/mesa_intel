@@ -43,6 +43,7 @@ if env['platform'] == 'windows':
 if env['platform'] == 'haiku':
     SConscript([
         'winsys/sw/hgl/SConscript',
+        'winsys/intel/hgl/SConscript'
     ])
 
 if env['dri']:
