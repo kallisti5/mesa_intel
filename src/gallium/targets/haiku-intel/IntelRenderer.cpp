@@ -62,7 +62,7 @@ IntelRenderer::IntelRenderer(BGLView *view, ulong options,
 	beg = time(NULL);
 	fContextObj = new GalliumContext(options);
 	end = time(NULL);
-	TRACE("Haiku Software GL Pipe initialization time: %f.\n",
+	TRACE("Haiku Intel GL Pipe initialization time: %f.\n",
 		difftime(end, beg));
 
 	// Allocate a bitmap
@@ -77,7 +77,7 @@ IntelRenderer::IntelRenderer(BGLView *view, ulong options,
 
 	_AllocateBitmap();
 
-	// Initialize the first "Haiku Software GL Pipe" context
+	// Initialize the first "Haiku Intel GL Pipe" context
 	beg = time(NULL);
 	fContextID = fContextObj->CreateContext(fBitmap);
 	end = time(NULL);
@@ -85,7 +85,7 @@ IntelRenderer::IntelRenderer(BGLView *view, ulong options,
 	if (fContextID < 0)
 		ERROR("%s: There was an error creating the context!\n", __func__);
 	else {
-		TRACE("%s: Haiku Software GL Pipe context creation time: %f.\n",
+		TRACE("%s: Haiku Intel GL Pipe context creation time: %f.\n",
 			__func__, difftime(end, beg));
 	}
 
@@ -355,7 +355,7 @@ IntelRenderer::_AllocateBitmap()
 		return;
 	}
 
-	TRACE("%s: New bitmap size: %d x %d\n", __func__,
+	TRACE("%s: New bitmap size: %ld x %ld\n", __func__,
 		fBitmap->Bounds().IntegerWidth(), fBitmap->Bounds().IntegerHeight());
 
 	fContextObj->ResizeViewport(fWidth, fHeight);

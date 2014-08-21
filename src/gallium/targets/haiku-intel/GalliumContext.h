@@ -63,6 +63,9 @@ public:
 
 		context_id			CreateContext(Bitmap* bitmap);
 		void				DestroyContext(context_id contextID);
+
+		struct st_visual*	CreateVisual();
+
 		context_id			GetCurrentContext() { return fCurrentContext; };
 		status_t			SetCurrentContext(Bitmap *bitmap,
 								context_id contextID);
